@@ -14,13 +14,13 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'docker build -t test:$BUILD_ID .'
+        sh 'docker build -t test1:$BUILD_ID .'
       }
     }
 
-    stage('') {
+    stage('run & test') {
       steps {
-        sh '''docker run --name test -d -p 5000:5000 test:$BUILD_ID
+        sh '''docker run --name test -d -p 5000:5000 test1:$BUILD_ID
 '''
         sleep 3
         sh 'curl localhost:8080'
