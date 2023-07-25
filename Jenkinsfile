@@ -20,10 +20,10 @@ pipeline {
 
     stage('run & test') {
       steps {
-        sh 'docker run --name test3 -d -p 5000:5000 test:$BUILD_ID'
+        sh 'docker run --name test4 -d -p 5000:5000 test:$BUILD_ID'
         sleep 3
         sh 'curl localhost:5000/api/doc'
-        sh 'docker stop test3 && docker rm test3'
+        sh 'docker stop test4 && docker rm test4'
       }
     }
 
