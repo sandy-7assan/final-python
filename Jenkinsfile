@@ -22,6 +22,8 @@ pipeline {
       steps {
         sh 'docker run --name test -d -p 5000:5000 test:$BUILD_ID'
         sleep 3
+        sh 'curl localhost:5000/api/doc'
+        sh 'docker stop test && docker rm test'
       }
     }
 
