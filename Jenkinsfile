@@ -12,11 +12,5 @@ pipeline {
       }
     }
 
-    stage('build ') {
-      steps {
-        echo 'fh'
-      }
-    }
-
   }
 }
