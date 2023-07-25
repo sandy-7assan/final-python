@@ -18,12 +18,5 @@ pipeline {
       }
     }
 
-    stage('run & test') {
-      steps {
-        sh 'docker run --name test4 -d -p 5000:5000 test:$BUILD_ID'
-        sleep 3
-      }
-    }
-
   }
 }
